@@ -15,10 +15,21 @@ let mainFood = [
     "price": "10€"
   },
   {
+    "name": "Pizza Napoli",
+    "description": "entdecke den Italiener in dir, mit dünnem, knusprigen Teig und feinstem herzahften Belag",
+    "price": "15€"
+  },
+  {
+    "name": "Pizza CHEF (Empfehlung des Hause)",
+    "description": "Mozarella, Tomaten, Knoblauch mit zartem Prosciutto und Trüffelöl, Rucola als Topping",
+    "price": "18€"
+  },
+  {
     "name": "Pizzabrötchen",
     "description": "eingerollte Pizza to go mit Salami",
     "price": "8€"
-  }
+  },
+ 
 ]
 
 let shopingCart = [
