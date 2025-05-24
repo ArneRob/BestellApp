@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/standart.css">
+    <link rel="stylesheet" href="./styles/basket.css">
+    <link rel="stylesheet" href="./styles/mainContent.css">
+    <script src="./scripts/script.js" defer></script>
+    <script src="./scripts/db.js" defer></script>
+    <script src="./scripts/template.js" defer></script>
+    <link rel="icon" type="image/x-icon" href="./assets/icons/favicon-32x32.png">
+    <title>BestellApp</title>
+</head>
+
+<body id="body" onload="renderAll(mainFood, shopingCart)">
+    <header>
+        <div class="imgContainer">
+            <img src="./assets/icons/ChatGPT Image 4. Apr. 2025, 10_20_00.png" alt="">
+        </div>
+    </header>
+    <div class="both-sections" id="renderSpot">
+        <section id="food-select-section">
+            <img class="welcomeFooodImg" src="./assets/img/pizza-7863713_1920.jpg" alt="">
+            <div class="standartContainer">
+
+                <h2>PizzaKongress</h2>
+                <a href="./rating.html">
+                    <p class="ratingInStars">Bewertung (4,8 von 5 Sternen)</p>
+                </a>
+                <div class="mainSideDish">
+                    <img src="./assets/icons/arrow_right_alt_24dp_FF7F00_FILL0_wght600_GRAD0_opsz24.png" alt="">
+                    <a href="#mainFoodSection">
+                        <p>Hauptgericht</p>
+                    </a>
+                    <a href="#dessertSection">
+                        <p>Dessert</p>
+                    </a>
+                </div>
+                <img class="companyLogo" src="./assets/img/pizza-round-logo.png" alt="">
+                <img class="mainFoodImg" src="./assets/img/pizza-3227292_1280.jpg" alt="">
+                <h3 id="mainFoodSection" class="mainFoodHeadline">Hauptgerichte</h3>
+                <div id="offerRenderContainer">
+
+                </div>
+
+                <!-- ---------------------------------------------Dessert section ------------------------------------------------------- -->
+
+                <img class="dessertImg" src="./assets/img/ice-cream-3611698_1280.jpg" alt="">
+
+                <h3 id="dessertSection" class="mainFoodHeadline">Dessert</h3>
+                <div id="dessertRenderContainer">
+                    <p>soon to be added.....</p>
+                </div>
+            </div>
+        </section>
+        <section id="shoppingCart" class="d_noneMedia">
+            <div class="stickyShopingCart">
+                <h2>Warenkorb</h2>
+                <div class="toggleContent">
+                    <p class="pickUp" id="pickUpID">Abholen</p>
+                    <img onclick="changeToggleOffMode()" id="toggleImgOff"
+                        src="./assets/icons/toggle_off_50dp_999999_FILL0_wght600_GRAD0_opsz48.png" alt="">
+                    <img onclick="changeToggleOnMode()" class="d_none" id="toggleImgOn"
+                        src="./assets/icons/toggle_on_50dp_FF7F00_FILL1_wght600_GRAD0_opsz48.png" alt="">
+                    <p id="deliveryID">Bestellen</p>
+                </div>
+                <div class="basket-elements">
+                    <div id="shopingCart" class="selected-food-shopping-cart">
+                        <h3 class="pizzaName">Pizza Diavolo</h3>
+                        <div class="foodControl">
+                            <img class="plusMinus"
+                                src="./assets/icons/remove_24dp_FF7F00_FILL0_wght600_GRAD0_opsz24.png" alt="">
+                            <p>3x</p>
+                            <img class="plusMinus" src="./assets/icons/add_24dp_FF7F00_FILL0_wght600_GRAD0_opsz24.png"
+                                alt="">
+                            <p>75 €</p>
+                            <img src="./assets/icons/delete.png" alt="">
+                        </div>
+                        <h3 class="pizzaName">Pizzabrötchen</h3>
+                        <div class="foodControl">
+                            <img class="plusMinus"
+                                src="./assets/icons/remove_24dp_FF7F00_FILL0_wght600_GRAD0_opsz24.png" alt="">
+                            <p>5x</p>
+                            <img class="plusMinus" src="./assets/icons/add_24dp_FF7F00_FILL0_wght600_GRAD0_opsz24.png"
+                                alt="">
+                            <p>10 €</p>
+                            <img src="./assets/icons/delete.png" alt="">
+                        </div>
+                    </div>
+                    <div class="calculatedPrice">
+                        <table>
+                            <tr>
+                                <td>ZwischenSumme</td>
+                                <td id="foodPrice">0€</td>
+                            </tr>
+                            <tr>
+                                <td>Lieferkosten</td>
+                                <td id="deliveryPrice">0€</td>
+                            </tr>
+                            <tr>
+                                <td>Gesamt</td>
+                                <td id="totalPrice">0€</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div onclick="openShopingCart()"  class="shopingCartButton"><p id="shopingButtonID">Warenkorb</p></div>
+</body>
+
+</html>

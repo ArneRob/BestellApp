@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(119, 120, 122);
+}
+
+
+header {
+    background-color: orange;
+
+}
+
+.imgContainer {
+    display: flex;
+    justify-content: flex-start;
+}
+
+header img {
+    width: 180px;
+}
+h2 {
+    margin-bottom: 10px;
+}
+h3 {
+    font-size: 20px;
+}
+p {
+    font-size: 18px;
+}
+
+.d_none {
+    display: none;
+}

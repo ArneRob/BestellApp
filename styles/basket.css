@@ -1,0 +1,170 @@
+
+/*-------------------------------------------------shopping cart big---------------------------------- */
+#shoppingCart {
+    width: clamp(300px, 20vw, 350px);
+    box-shadow: 0px 0 30px 5px #d9d5d5;
+    flex-grow: 1;
+    position: relative;
+    right: 0;
+    top: 0;
+    background-color: white;
+}
+
+@media (max-width: 760px) {
+
+    .overflowHidden {
+        overflow: hidden;
+    }
+
+    #shoppingCart {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100%;
+        background-color: white;
+    }
+
+    .stickyShopingCart {
+        margin: 0;
+    }
+
+    .calculatedPrice td {
+        font-size: 20px;
+    }
+
+    .companyLogo {
+        left: 0px !important;
+    }
+
+    .d_noneMedia {
+        display: none;
+    }
+
+}
+
+.stickyShopingCart {
+    top: 0;
+    position: sticky;
+}
+
+#shoppingCart h2 {
+    text-align: center;
+    padding: 10px;
+    border-bottom: 1px solid #d9d5d5;
+}
+
+.toggleContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    padding: 10px;
+    color: #00000080;
+}
+
+.toggleContent p {
+    font-size: 22px;
+}
+
+.delivery {
+    color: #ff7a00;
+    text-decoration: underline;
+}
+
+.pickUp {
+    color: black;
+    text-decoration: underline;
+}
+
+.foodControl {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding: 0 10px;
+}
+
+.amountContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.foodControl img {
+    width: 40px;
+
+}
+
+.foodControl img:hover {
+    border-radius: 50%;
+    border: solid orange 2px;
+}
+
+.pizzaName {
+    padding: 10px;
+}
+
+.plusMinus {
+    font-size: 50px;
+}
+
+.calculatedPrice {
+    padding: 10px;
+    border-top: 1px solid #d9d5d5;
+}
+
+.calculatedPrice table {
+    width: 100%;
+}
+
+.calculatedPrice tr {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* --------------------------------------------- shopingCartSmall---------------------------------------------------- */
+
+
+.shopingCartButton {
+    background-color: rgb(68, 85, 243);
+    bottom: 20px;
+    margin: 0 auto;
+    left: -190px;
+    right: 0;
+    position: sticky;
+    height: 50px;
+    width: 300px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    border-radius: 20px;
+}
+
+.shopingCartButton:hover {
+    background-color: rgb(15, 37, 233);
+    cursor: pointer;
+}
+
+@media (max-width: 760px) {
+    .shopingCartButton {
+        display: flex;
+    }
+}
+
+.shopingCartButton p {
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-size: 28px;
+}
+
+
+
+

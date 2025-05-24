@@ -1,0 +1,113 @@
+.both-sections {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+
+
+/*-----------------------------------------food-beginning---select-section---------------------------------- */
+
+
+
+#food-select-section {
+    width: 100vw;
+}
+
+.standartContainer {
+    padding: 20px;
+    margin: auto;
+    width: clamp(500px, 50vw, 1940px);
+}
+
+.welcomeFooodImg {
+    object-fit: cover;
+    height: 200px;
+    width: 100%;
+}
+
+.companyLogo {
+    position: absolute;
+    margin: 0 auto;
+    left: -190px;
+    right: 0;
+    top: 230px;
+    width: 120px;
+    border-radius: 100px;
+    box-shadow: 0px 0 30px 5px #272727;
+}
+
+.mainSideDish {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 8px;
+
+}
+
+.mainSideDish p {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.mainSideDish img {
+    width: 60px;
+}
+
+.ratingInStars {
+    color: orange;
+}
+
+
+/*-----------------------------------------food-main-select-section---------------------------------- */
+
+.mainFoodImg {
+    object-fit: cover;
+    height: 100px;
+    width: 100%;
+}
+
+.offerContainer {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    box-shadow: 0px 0 30px 5px #d9d5d5;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.offerContainer:hover {
+    background-color: #ffcf78;
+}
+
+.mainFoodHeadline {
+    font-size: 25px;
+    padding-left: 10px;
+    margin-bottom: 10px;
+}
+
+.offerDescription {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 10px;
+}
+
+.offerContainer img {
+    height: 40px;
+    box-shadow: 0px 0 30px 5px #d9d5d5;
+    background-color: white;
+}
+
+.offerContainer img:hover {
+    border: 1px solid black;
+}
+
+
+/* -------------------------------------desserts--------------------------------------------------- */
+
+.dessertImg {
+    object-fit: cover;
+    height: 100px;
+    width: 100%;
+}
