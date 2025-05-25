@@ -27,3 +27,13 @@ function getShopingCartTemplate(shopingIndex) {
                     </div>
            `
 }
+
+
+function getEmptyShopingCartTemplate() {
+    return `
+            <div class="emptyShopingCart">
+                <p>Füge Etwas Hinzu</p>
+                <img src="./assets/icons/shopping_cart_checkout_80dp_FF7F00_FILL0_wght500_GRAD0_opsz48.png" alt="">
+            </div>  
+            `
+}

@@ -3,7 +3,7 @@ let firstAttempt = true;
 
 function renderAll(mainFood) {
 
-   
+
     getFromLocalStorage();
 
     if (delivery[0] == true && firstAttempt == true) {
@@ -11,7 +11,7 @@ function renderAll(mainFood) {
         changeToggleOffMode()
     }
 
-     if (delivery[0] == false  && firstAttempt == true) {
+    if (delivery[0] == false && firstAttempt == true) {
         firstAttempt = false;
         changeToggleOnMode()
     }
@@ -24,14 +24,22 @@ function renderAll(mainFood) {
 
     }
 
-   
-
     let shopingCartRenderContainer = document.getElementById('shopingCart')
+
+
     shopingCartRenderContainer.innerHTML = "";
+
+
     for (let shopingIndex = 0; shopingIndex < shopingCart.length; shopingIndex++) {
 
         shopingCartRenderContainer.innerHTML += getShopingCartTemplate(shopingIndex)
 
+    }
+    if (shopingCart.length <= 0) {
+        shopingCartRenderContainer.innerHTML += getEmptyShopingCartTemplate();
+    }
+    if (shopingCart.length > 0) {
+        console.log("bild wird gelöscht")
     }
     calculateShopingCartPrice()
 }
@@ -68,10 +76,10 @@ function pushToShopingCart(foodIndex) {
                 temporaryShopingCart[0].name = nameToPush;
                 temporaryShopingCart[0].price = priceToPush;
                 shopingCart.splice(index, 1, temporaryShopingCart[0])
-            } 
+            }
         }
         if (found == false) {
-           
+
             temporaryShopingCart[0].name = nameToPush;
             temporaryShopingCart[0].price = priceToPush;
             temporaryShopingCart[0].amount = 1;
@@ -152,7 +160,7 @@ function getFromLocalStorage() {
 
     let stringedDelivery = localStorage.getItem("delivery")
     let unstringedDelivery = JSON.parse(stringedDelivery);
-    
+
     if (stringedDelivery !== null) {
         delivery = unstringedDelivery
     }
@@ -172,7 +180,7 @@ function getFromLocalStorage() {
 
 function calculateShopingCartPrice() {
     let foodPrice = 0;
-    let deliveryPrice = document.getElementById("deliveryPrice").innerHTML; 
+    let deliveryPrice = document.getElementById("deliveryPrice").innerHTML;
     let totalPrice = document.getElementById("totalPrice").innerHTML;
 
 
@@ -189,7 +197,7 @@ function calculateShopingCartPrice() {
 
 
     let unstringedDeliveryPrice = parseInt(deliveryPrice)
-    document.getElementById("totalPrice").innerHTML = foodPrice + unstringedDeliveryPrice
+    document.getElementById("totalPrice").innerHTML = foodPrice + unstringedDeliveryPrice + "€"
 
 
 
@@ -245,11 +253,21 @@ function changeToggleOnMode() {
 
 function openShopingCart() {
 
-    let shopingCart = document.getElementById('shoppingCart')
+    let shopingCart = document.getElementById('shoppingCart');
 
-    shopingCart.classList.toggle('d_noneMedia')
+    shopingCart.classList.toggle('d_noneMedia');
     let bodyChange = document.getElementById('body');
     bodyChange.classList.toggle('overflowHidden');
 
-   
+    let basketButton = document.getElementById("shopingCartButton");
+    basketButton.classList.toggle('shopingCartButton');
+    basketButton.classList.toggle('d_none');
+
+    let closingTag = document.getElementById('closingTagID')
+    closingTag.classList.toggle('d_none')
+}
+
+function sendDelivery() {
+    shopingCart = "";
+    renderAll(mainFood)
 }

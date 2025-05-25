@@ -57,6 +57,7 @@
         </section>
         <section id="shoppingCart" class="d_noneMedia">
             <div class="stickyShopingCart">
+                <img onclick="openShopingCart()" id="closingTagID" class="closingTag d_none" src="./assets/icons/close_30dp_000000_FILL0_wght500_GRAD0_opsz24.png" alt="">
                 <h2>Warenkorb</h2>
                 <div class="toggleContent">
                     <p class="pickUp" id="pickUpID">Abholen</p>
@@ -68,26 +69,7 @@
                 </div>
                 <div class="basket-elements">
                     <div id="shopingCart" class="selected-food-shopping-cart">
-                        <h3 class="pizzaName">Pizza Diavolo</h3>
-                        <div class="foodControl">
-                            <img class="plusMinus"
-                                src="./assets/icons/remove_24dp_FF7F00_FILL0_wght600_GRAD0_opsz24.png" alt="">
-                            <p>3x</p>
-                            <img class="plusMinus" src="./assets/icons/add_24dp_FF7F00_FILL0_wght600_GRAD0_opsz24.png"
-                                alt="">
-                            <p>75 €</p>
-                            <img src="./assets/icons/delete.png" alt="">
-                        </div>
-                        <h3 class="pizzaName">Pizzabrötchen</h3>
-                        <div class="foodControl">
-                            <img class="plusMinus"
-                                src="./assets/icons/remove_24dp_FF7F00_FILL0_wght600_GRAD0_opsz24.png" alt="">
-                            <p>5x</p>
-                            <img class="plusMinus" src="./assets/icons/add_24dp_FF7F00_FILL0_wght600_GRAD0_opsz24.png"
-                                alt="">
-                            <p>10 €</p>
-                            <img src="./assets/icons/delete.png" alt="">
-                        </div>
+                      
                     </div>
                     <div class="calculatedPrice">
                         <table>
@@ -106,15 +88,15 @@
                         </table>
                     </div>
                 </div>
-                <div class="deliveryButton">
+                <div class="deliveryButton" onclick="sendDelivery()">
                     <p>Bestellen</p>
                 </div>
             </div>
         </section>
     </div>
 
-    <div onclick="openShopingCart()" class="shopingCartButton">
-        <p id="shopingButtonID">Warenkorb</p>
+    <div id="shopingCartButton" onclick="openShopingCart()" class="shopingCartButton">
+        <p >Warenkorb</p>
     </div>
 
     <footer>
