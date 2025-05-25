@@ -176,6 +176,16 @@
     width: 80px;
 }
 
+.deliveryNotification {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: clamp(260px, 20vw, 300px);
+    margin: 20px;
+    background-color: white;
+    border: 2px solid orange;
+}
+
 /* --------------------------------------------- shopingCartSmall---------------------------------------------------- */
 
 .closingTag {

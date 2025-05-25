@@ -57,7 +57,8 @@
         </section>
         <section id="shoppingCart" class="d_noneMedia">
             <div class="stickyShopingCart">
-                <img onclick="openShopingCart()" id="closingTagID" class="closingTag d_none" src="./assets/icons/close_30dp_000000_FILL0_wght500_GRAD0_opsz24.png" alt="">
+                <img onclick="openShopingCart()" id="closingTagID" class="closingTag d_none"
+                    src="./assets/icons/close_30dp_000000_FILL0_wght500_GRAD0_opsz24.png" alt="">
                 <h2>Warenkorb</h2>
                 <div class="toggleContent">
                     <p class="pickUp" id="pickUpID">Abholen</p>
@@ -69,7 +70,7 @@
                 </div>
                 <div class="basket-elements">
                     <div id="shopingCart" class="selected-food-shopping-cart">
-                      
+
                     </div>
                     <div class="calculatedPrice">
                         <table>
@@ -91,12 +92,16 @@
                 <div class="deliveryButton" onclick="sendDelivery()">
                     <p>Bestellen</p>
                 </div>
+                <div id="deliveryNotifitcationID" class="d_none">
+                    <img src="./assets/icons/moped_70dp_FF7F00_FILL0_wght500_GRAD0_opsz48.png" alt="">
+                    <p>Testbestellung Abgeschlossen!</p>
+                </div>
             </div>
         </section>
     </div>
 
     <div id="shopingCartButton" onclick="openShopingCart()" class="shopingCartButton">
-        <p >Warenkorb</p>
+        <p>Warenkorb</p>
     </div>
 
     <footer>
