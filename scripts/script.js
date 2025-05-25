@@ -268,6 +268,7 @@ function openShopingCart() {
 }
 
 function sendDelivery() {
-    shopingCart = "";
-    renderAll(mainFood)
+    shopingCart = [];
+    changeToggleOnMode() 
+    saveToLocalStorage()
 }
