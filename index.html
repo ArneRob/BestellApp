@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./styles/standart.css">
     <link rel="stylesheet" href="./styles/basket.css">
     <link rel="stylesheet" href="./styles/mainContent.css">
+    <link rel="stylesheet" href="./styles/mediaQuery.css">
     <script src="./scripts/script.js" defer></script>
     <script src="./scripts/db.js" defer></script>
     <script src="./scripts/template.js" defer></script>
@@ -56,47 +57,47 @@
             </div>
         </section>
         <section id="shoppingCart" class="d_noneMedia">
-            <div class="stickyShopingCart">
-                <img onclick="openShopingCart()" id="closingTagID" class="closingTag d_none"
-                    src="./assets/icons/close_30dp_000000_FILL0_wght500_GRAD0_opsz24.png" alt="">
-                <h2>Warenkorb</h2>
-                <div class="toggleContent">
-                    <p class="pickUp" id="pickUpID">Abholen</p>
-                    <img onclick="changeToggleOffMode()" id="toggleImgOff"
-                        src="./assets/icons/toggle_off_50dp_999999_FILL0_wght600_GRAD0_opsz48.png" alt="">
-                    <img onclick="changeToggleOnMode()" class="d_none" id="toggleImgOn"
-                        src="./assets/icons/toggle_on_50dp_FF7F00_FILL1_wght600_GRAD0_opsz48.png" alt="">
-                    <p id="deliveryID">Bestellen</p>
-                </div>
-                <div class="basket-elements">
-                    <div id="shopingCart" class="selected-food-shopping-cart">
+                <div class="stickyShopingCart">
+                    <img onclick="openShopingCart()" id="closingTagID" class="closingTag d_none"
+                        src="./assets/icons/close_30dp_000000_FILL0_wght500_GRAD0_opsz24.png" alt="">
+                    <h2>Warenkorb</h2>
+                    <div class="toggleContent">
+                        <p class="pickUp" id="pickUpID">Abholen</p>
+                        <img onclick="changeToggleOffMode()" id="toggleImgOff"
+                            src="./assets/icons/toggle_off_50dp_999999_FILL0_wght600_GRAD0_opsz48.png" alt="">
+                        <img onclick="changeToggleOnMode()" class="d_none" id="toggleImgOn"
+                            src="./assets/icons/toggle_on_50dp_FF7F00_FILL1_wght600_GRAD0_opsz48.png" alt="">
+                        <p id="deliveryID">Bestellen</p>
+                    </div>
+                    <div class="basket-elements">
+                        <div id="shopingCart" class="selected-food-shopping-cart">
 
+                        </div>
+                        <div class="calculatedPrice">
+                            <table>
+                                <tr>
+                                    <td>ZwischenSumme</td>
+                                    <td id="foodPrice">0€</td>
+                                </tr>
+                                <tr>
+                                    <td>Lieferkosten</td>
+                                    <td id="deliveryPrice">0€</td>
+                                </tr>
+                                <tr>
+                                    <td>Gesamt</td>
+                                    <td id="totalPrice">0€</td>
+                                </tr>
+                            </table>
+                        </div>
                     </div>
-                    <div class="calculatedPrice">
-                        <table>
-                            <tr>
-                                <td>ZwischenSumme</td>
-                                <td id="foodPrice">0€</td>
-                            </tr>
-                            <tr>
-                                <td>Lieferkosten</td>
-                                <td id="deliveryPrice">0€</td>
-                            </tr>
-                            <tr>
-                                <td>Gesamt</td>
-                                <td id="totalPrice">0€</td>
-                            </tr>
-                        </table>
+                    <div class="deliveryButton" onclick="sendDelivery()">
+                        <p>Bestellen</p>
+                    </div>
+                    <div id="deliveryNotifitcationID" class="d_none">
+                        <img src="./assets/icons/moped_70dp_FF7F00_FILL0_wght500_GRAD0_opsz48.png" alt="">
+                        <p>Testbestellung Abgeschlossen!</p>
                     </div>
                 </div>
-                <div class="deliveryButton" onclick="sendDelivery()">
-                    <p>Bestellen</p>
-                </div>
-                <div id="deliveryNotifitcationID" class="d_none">
-                    <img src="./assets/icons/moped_70dp_FF7F00_FILL0_wght500_GRAD0_opsz48.png" alt="">
-                    <p>Testbestellung Abgeschlossen!</p>
-                </div>
-            </div>
         </section>
     </div>
 

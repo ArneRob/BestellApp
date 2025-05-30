@@ -1,52 +1,17 @@
 /*-------------------------------------------------shopping cart big---------------------------------- */
 #shoppingCart {
-    width: clamp(300px, 20vw, 350px);
+    width: clamp(300px, 340px, 350px);
     box-shadow: 0px 0 30px 5px #d9d5d5;
     flex-grow: 1;
     position: relative;
     right: 0;
     top: 0;
     background-color: white;
+    overflow: scroll;
 }
 
-@media (max-width: 760px) {
-
-    .overflowHidden {
-        overflow: hidden;
-    }
-
-    #shoppingCart {
-        position: fixed;
-        top: 0;
-        left: 0;
-        height: 100vh;
-        width: 100%;
-        background-color: white;
-    }
-
-    .stickyShopingCart {
-        margin: 0;
-    }
-
-    .calculatedPrice td {
-        font-size: 20px;
-    }
-
-    .companyLogo {
-        left: 0px !important;
-    }
-
-    .d_noneMedia {
-        display: none;
-    }
-
-    .basket-elements {
-        border: 1px solid black;
-    }
-    .deliveryButton {
-        width: 70% !important;
-    }
-
+  #shoppingCart::-webkit-scrollbar {
+  display: none;
 }
 
 .stickyShopingCart {
@@ -62,6 +27,11 @@
     text-align: center;
     padding: 10px;
     border-bottom: 1px solid #d9d5d5;
+}
+
+.basket-elements {
+    max-height: 55vh;
+    overflow-x: hidden;
 }
 
 .toggleContent {
@@ -172,6 +142,7 @@
     gap: 12px;
     margin: 50px;
 }
+
 .emptyShopingCart img {
     width: 80px;
 }
@@ -180,7 +151,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: clamp(260px, 20vw, 300px);
     margin: 20px;
     background-color: white;
     border: 2px solid orange;
@@ -189,6 +159,7 @@
 /* --------------------------------------------- shopingCartSmall---------------------------------------------------- */
 
 .closingTag {
+    display: none;
     position: relative;
     width: 32px;
     top: 20px;
@@ -222,12 +193,6 @@
 .shopingCartButton:hover {
     background-color: rgb(15, 37, 233);
     cursor: pointer;
-}
-
-@media (max-width: 760px) {
-    .shopingCartButton {
-        display: flex;
-    }
 }
 
 .shopingCartButton p {
