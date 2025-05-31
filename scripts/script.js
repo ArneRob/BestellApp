@@ -8,12 +8,12 @@ function renderAll(mainFood) {
 
     if (delivery[0] == true && firstAttempt == true) {
         firstAttempt = false;
-        changeToggleOffMode()
+        changeToggleOffTooOnMode()
     }
 
     if (delivery[0] == false && firstAttempt == true) {
         firstAttempt = false;
-        changeToggleOnMode()
+        changeToggleOnTooOffMode()
     }
     let renderContainer = document.getElementById('offerRenderContainer');
     renderContainer.innerHTML = "";
@@ -43,6 +43,7 @@ function renderAll(mainFood) {
     }
     calculateShopingCartPrice()
 }
+
 
 function saveToLocalStorage() {
 
@@ -213,7 +214,7 @@ function calculateShopingCartPrice() {
 
 
 
-function changeToggleOffMode() {
+function changeToggleOffTooOnMode() {
     let toggleImgOn = document.getElementById("toggleImgOn");
     let toggleFontOff = document.getElementById("pickUpID");
     let toggleImgOff = document.getElementById("toggleImgOff");
@@ -232,7 +233,7 @@ function changeToggleOffMode() {
     saveToLocalStorage()
 }
 
-function changeToggleOnMode() {
+function changeToggleOnTooOffMode() {
 
     let toggleImgOff = document.getElementById("toggleImgOff");
     let toggleFontOn = document.getElementById("deliveryID");
@@ -253,10 +254,10 @@ function changeToggleOnMode() {
 }
 
 
-// ----------------------------------openShopingCart------------------------------------------------------------
+// ----------------------------------openShoppingCart------------------------------------------------------------
 
 
-function openShopingCart() {
+function openShoppingCart() {
 
     let shopingCart = document.getElementById('shoppingCart');
 
@@ -280,6 +281,6 @@ function sendDelivery() {
         deliveryNotification.classList.add('deliveryNotification')
     }
     shopingCart = [];
-    changeToggleOnMode()
+    changeToggleOnTooOffMode()
     saveToLocalStorage()
 }

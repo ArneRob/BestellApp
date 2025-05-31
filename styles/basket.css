@@ -7,14 +7,13 @@
     right: 0;
     top: 0;
     background-color: white;
-    overflow: scroll;
 }
 
   #shoppingCart::-webkit-scrollbar {
   display: none;
 }
 
-.stickyShopingCart {
+.stickyShoppingCart {
     top: 0;
     position: sticky;
     display: flex;
