@@ -2,6 +2,7 @@
     display: flex;
     justify-content: center;
     flex-direction: row;
+    min-height: calc(100vh - 156px)
 }
 
 
@@ -12,6 +13,7 @@
 
 #food-select-section {
     width: 100vw;
+
 }
 
 .standartContainer {

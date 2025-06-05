@@ -2,8 +2,6 @@ let firstAttempt = true;
 
 
 function renderAll() {
-
-
     getFromLocalStorage();
     checkDeliveryToggleButtonCondition();
     renderMenueOffer();
@@ -62,7 +60,6 @@ function saveToLocalStorage() {
     renderAll(mainFood, shopingCart);
 
 }
-
 
 function pushToShopingCart(foodIndex) {
 
@@ -185,22 +182,20 @@ function getFromLocalStorage() {
     let stringedDelivery = localStorage.getItem("delivery")
     let unstringedDelivery = JSON.parse(stringedDelivery);
 
-    if (stringedDelivery !== null) {
+    if (stringedDelivery) {
         delivery = unstringedDelivery
     }
 
-    if (stringedMainFood !== null) {
+    if (stringedMainFood) {
         mainFood = unstringedMainFood
     }
-    if (stringedshopingCart !== null) {
+    if (stringedshopingCart) {
         shopingCart = unstringedShopingCart
     }
 
 }
 
-
 // ---------------------------------calculate Price----------------------------
-
 
 function calculateShopingCartPrice() {
     let foodPrice = 0;
@@ -223,10 +218,7 @@ function calculateShopingCartPrice() {
 
 }
 
-
 // -----------------------------------shopingCartDeliveryToggle-------------------------------------------
-
-
 
 function changeToggleOffTooOnMode() {
     let toggleImgOn = document.getElementById("toggleImgOn");
@@ -267,9 +259,7 @@ function changeToggleOnTooOffMode() {
     saveToLocalStorage()
 }
 
-
 // ----------------------------------openShoppingCart------------------------------------------------------------
-
 
 function openShoppingCart() {
 

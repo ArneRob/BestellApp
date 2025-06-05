@@ -1,4 +1,3 @@
-
 @media (max-width: 820px) {
 
     .overflowHidden {
@@ -16,7 +15,7 @@
         height: 100vh;
         width: 100%;
         background-color: white;
-          overflow: scroll;
+        overflow: scroll;
     }
 
     .stickyShoppingCart {
@@ -28,7 +27,7 @@
     }
 
     .companyLogo {
-        left: 0px ;
+        left: 0px;
     }
 
     .d_noneMedia {
@@ -39,58 +38,70 @@
         border: 1px solid black;
         width: clamp(370px, 20vw, 350px);
     }
+
     .deliveryButton {
-        width: 370px ;
+        width: 370px;
     }
 
     .deliveryNotification {
-         width: 370px ;
-         padding: 0 10px;
+        width: 370px;
+        padding: 0 10px;
     }
 
     .closingTag {
-        display: block ;
+        display: block;
+    }
+
+    .offerContainer:hover {
+        background-color: white;
+    }
+
+    .both-sections {
+        flex-direction: column;
     }
 
 }
 
 @media (max-width: 522px) {
     .standartContainer {
-         width: 400px ;
+        width: 400px;
     }
+
     .companyLogo {
-        top: 210px ;
+        top: 210px;
     }
 
     .closingTag {
-        right: -170px ;
+        right: -170px;
     }
 }
 
 @media (max-width: 420px) {
 
-     .standartContainer {
-         width: 350px ;
+    .standartContainer {
+        width: 350px;
     }
+
     .basket-elements {
-        width: 300px ;
+        width: 300px;
     }
+
     .deliveryButton {
-        width: 300px ;
+        width: 300px;
     }
 
     .deliveryNotification {
-        width: 300px ;
+        width: 300px;
         gap: 8px;
     }
 
     .closingTag {
-        right: -137px ;
+        right: -137px;
     }
 }
 
-@media (max-width: 365px)  {
+@media (max-width: 365px) {
     .standartContainer {
-         width: 300px ;
+        width: 300px;
     }
 }

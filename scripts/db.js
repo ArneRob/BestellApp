@@ -32,14 +32,9 @@ let mainFood = [
  
 ]
 
-let shopingCart = [
+let shopingCart = [];
 
-
-];
-
-let delivery = [ deliveryStatus = false
-
-];
+let delivery = [ deliveryStatus = false];
 
 
 let temporaryShopingCart = [

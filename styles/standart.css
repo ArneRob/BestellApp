@@ -5,6 +5,8 @@
     scroll-behavior: smooth;
 }
 
+
+
 a {
     text-decoration: none;
     color: rgb(119, 120, 122);
@@ -24,12 +26,15 @@ header {
 header img {
     width: 180px;
 }
+
 h2 {
     margin-bottom: 10px;
 }
+
 h3 {
     font-size: 20px;
 }
+
 p {
     font-size: 18px;
 }
@@ -47,4 +52,8 @@ footer {
     font-size: 15px;
     padding: 15px;
     margin-top: auto;
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;
 }
