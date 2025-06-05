@@ -1,34 +1,20 @@
 let firstAttempt = true;
 
 
-function renderAll(mainFood) {
+function renderAll() {
 
 
     getFromLocalStorage();
+    checkDeliveryToggleButtonCondition();
+    renderMenueOffer();
+    renderShoppingCart();
+    calculateShopingCartPrice();
+}
 
-    if (delivery[0] == true && firstAttempt == true) {
-        firstAttempt = false;
-        changeToggleOffTooOnMode()
-    }
-
-    if (delivery[0] == false && firstAttempt == true) {
-        firstAttempt = false;
-        changeToggleOnTooOffMode()
-    }
-    let renderContainer = document.getElementById('offerRenderContainer');
-    renderContainer.innerHTML = "";
-
-    for (let foodIndex = 0; foodIndex < mainFood.length; foodIndex++) {
-
-        renderContainer.innerHTML += getOfferContainerTemplate(foodIndex);
-
-    }
-
+function renderShoppingCart() {
     let shopingCartRenderContainer = document.getElementById('shopingCart')
 
-
     shopingCartRenderContainer.innerHTML = "";
-
 
     for (let shopingIndex = 0; shopingIndex < shopingCart.length; shopingIndex++) {
 
@@ -38,12 +24,30 @@ function renderAll(mainFood) {
     if (shopingCart.length <= 0) {
         shopingCartRenderContainer.innerHTML += getEmptyShopingCartTemplate();
     }
-    if (shopingCart.length > 0) {
-        console.log("bild wird gelöscht")
-    }
-    calculateShopingCartPrice()
 }
 
+function renderMenueOffer() {
+    let renderContainer = document.getElementById('offerRenderContainer');
+    renderContainer.innerHTML = "";
+
+    for (let foodIndex = 0; foodIndex < mainFood.length; foodIndex++) {
+
+        renderContainer.innerHTML += getOfferContainerTemplate(foodIndex);
+
+    }
+}
+
+function checkDeliveryToggleButtonCondition() {
+    if (delivery[0] == true && firstAttempt == true) {
+        firstAttempt = false;
+        changeToggleOffTooOnMode()
+    }
+
+    if (delivery[0] == false && firstAttempt == true) {
+        firstAttempt = false;
+        changeToggleOnTooOffMode()
+    }
+}
 
 function saveToLocalStorage() {
 
@@ -64,48 +68,62 @@ function pushToShopingCart(foodIndex) {
 
     let nameToPush = mainFood[foodIndex].name;
     let priceToPush = mainFood[foodIndex].price;
-    let found = false;
+
 
     let deliveryNotification = document.getElementById('deliveryNotifitcationID')
     deliveryNotification.classList.add('d_none')
     deliveryNotification.classList.remove('deliveryNotification')
 
+    checkIfAlreadyInShoppingCart(foodIndex)
+
+    if (shopingCart.length == 0) {
+
+        temporaryShopingCart[0].name = nameToPush;
+        temporaryShopingCart[0].price = priceToPush;
+        shopingCart.push(temporaryShopingCart[0])
+
+    }
+    saveToLocalStorage();
+}
+
+function checkIfAlreadyInShoppingCart(foodIndex) {
+    let nameToPush = mainFood[foodIndex].name;
+    let priceToPush = mainFood[foodIndex].price;
+    let found = false;
 
     if (shopingCart.length > 0) {
         for (let index = 0; index < shopingCart.length; index++) {
 
             if (shopingCart[index].name == nameToPush) {
                 found = true;
-                shopingCart[index].amount += 1;
-                temporaryShopingCart[0].amount = shopingCart[index].amount;
-                temporaryShopingCart[0].name = nameToPush;
-                temporaryShopingCart[0].price = priceToPush;
-                shopingCart.splice(index, 1, temporaryShopingCart[0])
+                addAmount(foodIndex, index)
             }
         }
         if (found == false) {
-
-            temporaryShopingCart[0].name = nameToPush;
-            temporaryShopingCart[0].price = priceToPush;
-            temporaryShopingCart[0].amount = 1;
-            shopingCart.push(temporaryShopingCart[0])
+            pushWholeItem(foodIndex)
         }
     }
+}
 
-    if (shopingCart.length == 0) {
+function addAmount(foodIndex, index) {
+    let nameToPush = mainFood[foodIndex].name;
+    let priceToPush = mainFood[foodIndex].price;
 
+    shopingCart[index].amount += 1;
+    temporaryShopingCart[0].amount = shopingCart[index].amount;
+    temporaryShopingCart[0].name = nameToPush;
+    temporaryShopingCart[0].price = priceToPush;
+    shopingCart.splice(index, 1, temporaryShopingCart[0])
+}
 
+function pushWholeItem(foodIndex) {
+    let nameToPush = mainFood[foodIndex].name;
+    let priceToPush = mainFood[foodIndex].price;
 
-        temporaryShopingCart[0].name = nameToPush;
-        temporaryShopingCart[0].price = priceToPush;
-        shopingCart.push(temporaryShopingCart[0])
-
-
-
-        console.log(shopingCart)
-    }
-    saveToLocalStorage();
-
+    temporaryShopingCart[0].name = nameToPush;
+    temporaryShopingCart[0].price = priceToPush;
+    temporaryShopingCart[0].amount = 1;
+    shopingCart.push(temporaryShopingCart[0])
 }
 
 function addToShopingItem(shopingIndex) {
@@ -189,7 +207,6 @@ function calculateShopingCartPrice() {
     let deliveryPrice = document.getElementById("deliveryPrice").innerHTML;
     let totalPrice = document.getElementById("totalPrice").innerHTML;
 
-
     for (let index = 0; index < shopingCart.length; index++) {
         let stringPrice = shopingCart[index].price
         let amount = shopingCart[index].amount
@@ -201,11 +218,8 @@ function calculateShopingCartPrice() {
 
     document.getElementById("foodPrice").innerHTML = foodPrice + "€";
 
-
     let unstringedDeliveryPrice = parseInt(deliveryPrice)
     document.getElementById("totalPrice").innerHTML = foodPrice + unstringedDeliveryPrice + "€"
-
-
 
 }
 
