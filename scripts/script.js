@@ -11,7 +11,6 @@ function renderAll() {
 
 function renderShoppingCart() {
     let shopingCartRenderContainer = document.getElementById('shopingCart')
-
     shopingCartRenderContainer.innerHTML = "";
 
     for (let shopingIndex = 0; shopingIndex < shopingCart.length; shopingIndex++) {
@@ -66,7 +65,6 @@ function pushToShopingCart(foodIndex) {
     let nameToPush = mainFood[foodIndex].name;
     let priceToPush = mainFood[foodIndex].price;
 
-
     let deliveryNotification = document.getElementById('deliveryNotifitcationID')
     deliveryNotification.classList.add('d_none')
     deliveryNotification.classList.remove('deliveryNotification')
@@ -74,11 +72,9 @@ function pushToShopingCart(foodIndex) {
     checkIfAlreadyInShoppingCart(foodIndex)
 
     if (shopingCart.length == 0) {
-
         temporaryShopingCart[0].name = nameToPush;
         temporaryShopingCart[0].price = priceToPush;
         shopingCart.push(temporaryShopingCart[0])
-
     }
     saveToLocalStorage();
 }
@@ -135,7 +131,6 @@ function addToShopingItem(shopingIndex) {
     temporaryShopingCart[0].name = nameToPush;
     temporaryShopingCart[0].price = priceToPush;
     shopingCart.splice(shopingIndex, 1, temporaryShopingCart[0])
-    console.log(shopingCart[shopingIndex].amount);
 
     saveToLocalStorage();
 
@@ -158,21 +153,16 @@ function removeShopingItem(shopingIndex) {
         shopingCart.splice(shopingIndex, 1, temporaryShopingCart[0])
     }
 
-
-
     saveToLocalStorage();
-
 }
 
 function shopingItemDelete(shopingIndex) {
-
     shopingCart.splice(shopingIndex, 1)
     temporaryShopingCart[0].amount = 1;
     saveToLocalStorage();
 }
 
 function getFromLocalStorage() {
-
     let stringedMainFood = localStorage.getItem("mainFood")
     let unstringedMainFood = JSON.parse(stringedMainFood);
 
@@ -185,14 +175,12 @@ function getFromLocalStorage() {
     if (stringedDelivery) {
         delivery = unstringedDelivery
     }
-
     if (stringedMainFood) {
         mainFood = unstringedMainFood
     }
     if (stringedshopingCart) {
         shopingCart = unstringedShopingCart
     }
-
 }
 
 // ---------------------------------calculate Price----------------------------
@@ -215,7 +203,6 @@ function calculateShopingCartPrice() {
 
     let unstringedDeliveryPrice = parseInt(deliveryPrice)
     document.getElementById("totalPrice").innerHTML = foodPrice + unstringedDeliveryPrice + "€"
-
 }
 
 // -----------------------------------shopingCartDeliveryToggle-------------------------------------------
@@ -240,7 +227,6 @@ function changeToggleOffTooOnMode() {
 }
 
 function changeToggleOnTooOffMode() {
-
     let toggleImgOff = document.getElementById("toggleImgOff");
     let toggleFontOn = document.getElementById("deliveryID");
     let toggleImgOn = document.getElementById("toggleImgOn");
@@ -262,7 +248,6 @@ function changeToggleOnTooOffMode() {
 // ----------------------------------openShoppingCart------------------------------------------------------------
 
 function openShoppingCart() {
-
     let shopingCart = document.getElementById('shoppingCart');
 
     shopingCart.classList.toggle('d_noneMedia');
@@ -278,7 +263,6 @@ function openShoppingCart() {
 }
 
 function sendDelivery() {
-
     if (shopingCart.length >= 1) {
         let deliveryNotification = document.getElementById('deliveryNotifitcationID')
         deliveryNotification.classList.remove('d_none')
